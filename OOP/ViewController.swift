@@ -10,18 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var notebookImageView: UIImageView!
+    @IBOutlet weak var notebookNameLabel: UILabel!
+    @IBOutlet weak var notebookPriceLabel: UILabel!
+    @IBOutlet weak var notebookColorLabel: UILabel!
+    
+    var notebookInstance:NotebookModel?
+    
+    func updateUI(){
+        if let notebookInstance = notebookInstance {
+            notebookNameLabel.text = notebookInstance.name
+            notebookPriceLabel.text = "\(notebookInstance.price)"
+            notebookColorLabel.text = notebookInstance.color
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        print("This is my first Update")
+        notebookInstance = NotebookModel(name: "Macbook", price: 15432900, color: "Space Gray")
+        
+        updateUI()
+        
+        
     }
 
     
-    func sum()
-    {
-        
-    }
-
 }
 
