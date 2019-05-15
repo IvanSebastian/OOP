@@ -17,6 +17,11 @@ class ViewController: UIViewController {
         print("This is my first Update")
     }
 
+    
+    func sum()
+    {
+        
+    }
 
 }
 
